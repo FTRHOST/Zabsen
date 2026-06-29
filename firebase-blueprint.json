@@ -1,0 +1,89 @@
+{
+  "entities": {
+    "Employee": {
+      "title": "Employee",
+      "description": "Profil pegawai AbsenKu",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "ID Pegawai (e.g. PEG-12345)" },
+        "name": { "type": "string", "description": "Nama Lengkap" },
+        "role": { "type": "string", "description": "Jabatan/Peran Kerja" },
+        "photoUrl": { "type": "string", "description": "URL Foto Profil" },
+        "attendanceRate": { "type": "integer", "description": "Persentase Kehadiran" },
+        "avgCheckIn": { "type": "string", "description": "Rata-rata Waktu Check-In" }
+      },
+      "required": ["id", "name", "role", "photoUrl", "attendanceRate", "avgCheckIn"]
+    },
+    "LeaveBalance": {
+      "title": "LeaveBalance",
+      "description": "Sisa jatah cuti pegawai",
+      "type": "object",
+      "properties": {
+        "annual": { "type": "integer", "description": "Sisa Cuti Tahunan" },
+        "sickUsed": { "type": "integer", "description": "Sakit yang telah digunakan" },
+        "specialAvailable": { "type": "integer", "description": "Cuti Khusus yang tersedia" }
+      },
+      "required": ["annual", "sickUsed", "specialAvailable"]
+    },
+    "AttendanceRecord": {
+      "title": "AttendanceRecord",
+      "description": "Catatan presensi masuk dan pulang pegawai",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "ID Catatan Unik" },
+        "employeeId": { "type": "string", "description": "ID Pegawai" },
+        "employeeName": { "type": "string", "description": "Nama Pegawai" },
+        "date": { "type": "string", "description": "Format Tanggal Teks" },
+        "dateKey": { "type": "string", "description": "Format Tanggal Kunci (YYYY-MM-DD)" },
+        "checkInTime": { "type": "string", "description": "Waktu Check-In" },
+        "checkOutTime": { "type": "string", "description": "Waktu Check-Out (Opsional)" },
+        "checkInStatus": { "type": "string", "description": "Status Check-In (Tepat Waktu/Terlambat)" },
+        "checkOutStatus": { "type": "string", "description": "Status Check-Out (Opsional)" },
+        "locationName": { "type": "string", "description": "Nama Lokasi Presensi" },
+        "latitude": { "type": "number", "description": "Latitude Koordinat GPS" },
+        "longitude": { "type": "number", "description": "Longitude Koordinat GPS" },
+        "checkInSelfie": { "type": "string", "description": "URL Foto Selfie Check-In" },
+        "checkOutSelfie": { "type": "string", "description": "URL Foto Selfie Check-Out (Opsional)" }
+      },
+      "required": ["id", "employeeId", "employeeName", "date", "dateKey", "checkInTime", "checkInStatus", "locationName", "checkInSelfie"]
+    },
+    "LeaveRequest": {
+      "title": "LeaveRequest",
+      "description": "Pengajuan cuti atau sakit dari pegawai",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "ID Pengajuan Unik" },
+        "employeeId": { "type": "string", "description": "ID Pegawai Pengaju" },
+        "employeeName": { "type": "string", "description": "Nama Pegawai" },
+        "employeeRole": { "type": "string", "description": "Peran Pegawai" },
+        "employeePhoto": { "type": "string", "description": "Foto Pegawai" },
+        "type": { "type": "string", "description": "Tipe Cuti (Cuti Tahunan/Sakit/Cuti Khusus)" },
+        "startDate": { "type": "string", "description": "Tanggal Mulai Cuti" },
+        "endDate": { "type": "string", "description": "Tanggal Selesai Cuti" },
+        "days": { "type": "integer", "description": "Jumlah Hari Cuti" },
+        "reason": { "type": "string", "description": "Alasan Cuti" },
+        "status": { "type": "string", "description": "Status Pengajuan (PENDING/APPROVED/REJECTED)" },
+        "submittedAt": { "type": "string", "description": "Waktu Pengiriman" }
+      },
+      "required": ["id", "employeeId", "employeeName", "employeeRole", "employeePhoto", "type", "startDate", "endDate", "days", "reason", "status", "submittedAt"]
+    }
+  },
+  "firestore": {
+    "/employees/{employeeId}": {
+      "schema": "Employee",
+      "description": "Data profil lengkap pegawai"
+    },
+    "/leaveBalances/{employeeId}": {
+      "schema": "LeaveBalance",
+      "description": "Jatah cuti milik pegawai"
+    },
+    "/attendance/{recordId}": {
+      "schema": "AttendanceRecord",
+      "description": "Log presensi harian karyawan"
+    },
+    "/leaveRequests/{requestId}": {
+      "schema": "LeaveRequest",
+      "description": "Data pengajuan cuti yang dikelola HR"
+    }
+  }
+}
