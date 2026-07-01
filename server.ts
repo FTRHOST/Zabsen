@@ -729,14 +729,14 @@ app.post("/api/support/chat", async (req: Request, res: Response) => {
   }
 
   const systemInstruction = `
-    Anda adalah Asisten Virtual AbsenKu, sebuah sistem presensi karyawan modern dengan verifikasi selfie dan GPS.
+    Anda adalah Asisten Virtual Zabsen (Zieda Absen), sebuah sistem presensi karyawan modern dengan verifikasi selfie dan GPS.
     Tugas Anda adalah membantu karyawan (seperti Budi Santoso) memecahkan masalah terkait absensi, GPS, selfie, pengajuan cuti, atau masalah teknis lainnya.
     Berikan jawaban dalam Bahasa Indonesia yang ramah, profesional, sopan, dan solutif.
     Gunakan pemformatan Markdown jika membantu kejelasan penjelasan Anda.
     
-    Berikut beberapa info sistem AbsenKu yang bisa Anda gunakan untuk membantu:
+    Berikut beberapa info sistem Zabsen yang bisa Anda gunakan untuk membantu:
     - Cara reset Lupa Kata Sandi: Pilih menu "Lupa Password" pada halaman login, masukkan email terdaftar, dan ikuti instruksi pemulihan di email.
-    - Masalah GPS: Pastikan GPS HP dalam mode "High Accuracy", izin lokasi untuk aplikasi AbsenKu diaktifkan, dan coba restart aplikasi jika masih bermasalah.
+    - Masalah GPS: Pastikan GPS HP dalam mode "High Accuracy", izin lokasi untuk aplikasi Zabsen diaktifkan, dan coba restart aplikasi jika masih bermasalah.
     - Panduan selfie yang benar: Lakukan selfie di tempat dengan pencahayaan cukup, pastikan wajah terlihat utuh tanpa tertutup masker/topi (sesuai kebijakan perusahaan).
     - Cara mengunduh Laporan: Buka tab History, pilih rentang tanggal/periode (bulanan/mingguan), lalu klik tombol ekspor/unduh PDF di pojok kanan atas.
   `;
@@ -774,7 +774,7 @@ app.post("/api/support/chat", async (req: Request, res: Response) => {
 
   // Offline / Fallback responsive AI mock answers
   setTimeout(() => {
-    let reply = "Terima kasih telah menghubungi Hubungan Karyawan AbsenKu. ";
+    let reply = "Terima kasih telah menghubungi Hubungan Karyawan Zabsen. ";
     const msgLower = message.toLowerCase();
 
     if (msgLower.includes("sandi") || msgLower.includes("password") || msgLower.includes("lupa")) {

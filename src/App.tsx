@@ -130,7 +130,7 @@ export default function App() {
       return (
         <div className="flex flex-col items-center justify-center min-h-[400px] gap-2">
           <span className="material-symbols-outlined text-3xl text-primary animate-spin">refresh</span>
-          <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Memuat Data AbsenKu...</p>
+          <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Memuat Data Zieda Absen (Zabsen)...</p>
         </div>
       );
     }
@@ -178,7 +178,7 @@ export default function App() {
   const renderHeader = () => {
     if (!employeeId || !employee) return null;
 
-    let title = "AbsenKu";
+    let title = "Zieda Absen (Zabsen)";
     let icon = "fingerprint";
 
     if (activeTab === "history") {
@@ -186,7 +186,7 @@ export default function App() {
     } else if (activeTab === "profile") {
       title = "Profil";
     } else if (activeTab === "support") {
-      title = "Bantuan AbsenKu";
+      title = "Bantuan Zabsen";
       icon = "help_outline";
     } else if (activeTab === "admin") {
       title = "Admin HR";

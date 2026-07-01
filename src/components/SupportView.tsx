@@ -10,7 +10,7 @@ export default function SupportView() {
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([
     {
       sender: "ai",
-      text: "Halo! Saya Asisten AI AbsenKu. Ada yang bisa saya bantu terkait absensi, GPS, selfie, atau pengajuan cuti hari ini?",
+      text: "Halo! Saya Asisten AI Zabsen. Ada yang bisa saya bantu terkait absensi, GPS, selfie, atau pengajuan cuti hari ini?",
       timestamp: new Date().toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" }),
     },
   ]);
@@ -30,7 +30,7 @@ export default function SupportView() {
       id: "faq-2",
       question: "Mengapa muncul Masalah Lokasi GPS?",
       answer:
-        "Pastikan pengaturan GPS perangkat Anda dalam mode 'Akurasi Tinggi' dan browser/aplikasi AbsenKu memiliki izin akses lokasi. Jika masih bermasalah, cobalah memuat ulang aplikasi atau berpindah ke area yang lebih terbuka.",
+        "Pastikan pengaturan GPS perangkat Anda dalam mode 'Akurasi Tinggi' dan browser/aplikasi Zabsen memiliki izin akses lokasi. Jika masih bermasalah, cobalah memuat ulang aplikasi atau berpindah ke area yang lebih terbuka.",
       iconName: "location_on",
     },
     {
@@ -328,7 +328,7 @@ export default function SupportView() {
                     </span>
                   </div>
                   <div>
-                    <h4 className="text-xs font-extrabold">Virtual Assistant AbsenKu</h4>
+                    <h4 className="text-xs font-extrabold">Virtual Assistant Zabsen</h4>
                     <p className="text-[10px] text-white/70 font-semibold leading-none">Online - AI-Powered</p>
                   </div>
                 </div>

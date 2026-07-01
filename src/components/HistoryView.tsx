@@ -62,7 +62,7 @@ export default function HistoryView({ employee, attendanceHistory }: HistoryView
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.setAttribute("href", url);
-    link.setAttribute("download", `Laporan_Absensi_AbsenKu_${selectedMonth.replace(" ", "_")}.csv`);
+    link.setAttribute("download", `Laporan_Absensi_Zabsen_${selectedMonth.replace(" ", "_")}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

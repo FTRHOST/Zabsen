@@ -197,7 +197,7 @@ export default function LoginView({ onLoginSuccess }: LoginViewProps) {
             fingerprint
           </span>
           <h1 className="text-3xl font-extrabold tracking-tight text-on-surface">
-            Absen<span className="text-primary">Ku</span>
+            Zieda <span className="text-primary">Absen</span> <span className="text-sm font-medium text-slate-400 tracking-wide">(Zabsen)</span>
           </h1>
         </div>
 

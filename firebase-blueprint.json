@@ -2,7 +2,7 @@
   "entities": {
     "Employee": {
       "title": "Employee",
-      "description": "Profil pegawai AbsenKu",
+      "description": "Profil pegawai Zabsen",
       "type": "object",
       "properties": {
         "id": { "type": "string", "description": "ID Pegawai (e.g. PEG-12345)" },
